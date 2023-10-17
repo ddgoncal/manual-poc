@@ -1,0 +1,13 @@
+.buttons_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    gap: 20px;
+}
+
+.options_wrapper{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
