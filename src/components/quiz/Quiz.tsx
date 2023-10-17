@@ -15,7 +15,9 @@ type Answer = {
 
 const Quiz : React.FC<QuizProps> = ({ setTakeQuiz }) => {
     const [selectedAnswers, setSelectedAnswers] = useState<Answer[]>([]);
+    const [QuizResultsText, setQuizResultsText] = useState<string>("");
     const [currentQuizStep, setCurrentQuizStep] = useState(0);
+    //last step is the result
     const numberOsSteps = quizQuestions["questions"].length;
     const questions = quizQuestions["questions"];
 
@@ -24,11 +26,12 @@ const Quiz : React.FC<QuizProps> = ({ setTakeQuiz }) => {
     const checkResults = () => {
       let isCorrect = selectedAnswers.every((answer) => answer.isRejection === false);
       if (isCorrect) {
-          alert("You got all the answers right! You're a genius!");
+          setQuizResultsText("You got all the answers right! You're a genius!")
       } else {
-          alert("You got some answers wrong! Try again!");
+          setQuizResultsText("You got some answers wrong! Try again!")
       }
-      setTakeQuiz(false);
+        setCurrentQuizStep((prevStep) => prevStep + 1);
+      ;
     }
 
     // This method will be called when the user clicks on the "Next" button
@@ -69,36 +72,46 @@ const Quiz : React.FC<QuizProps> = ({ setTakeQuiz }) => {
 
     return (
       <div>
-        <div>
-          <h3>{questions[currentQuizStep]["question"]}</h3>
-            {questions[currentQuizStep].options.map((option) => (
-              <div className={styles.option_wrapper} key={option.value.toString()}>
-                <label>
-                  <input
-                    type="radio"
-                    name={`${option.display}`}
-                    value={option.value.toString()}
-                    checked={
-                        selectedAnswers.find(
-                            (answer) =>
-                                answer.questionId === currentQuizStep && answer.answer === option.value.toString()
-                        ) !== undefined
-                    }
-                    onChange={() => handleAnswerSelect(currentQuizStep, option.value.toString(), option.isRejection)}
-                  />
-                  {option.display.includes('<img') ? (
-                  <div dangerouslySetInnerHTML={{ __html: option.display }} />
-                  ) : (
-                      option.display
-                  )}
-                </label>
-              </div>
-            ))}
-        </div>
-        <div className={styles.buttons_container}>
-          <Button variant="contained" onClick={handlePreviousStep}>Previous</Button>
-          <Button variant="contained" color="primary" disabled={selectedAnswers.find((answer) => answer.questionId === currentQuizStep) === undefined} onClick={handleNextStep}>Next</Button>
-        </div>
+        <h1 className={styles.title}>Onboarding Quiz</h1>
+        {currentQuizStep === numberOsSteps && (
+          <div className={styles.progress_bar}>
+            <p>{QuizResultsText}</p>
+          </div>
+        )}
+        {currentQuizStep !== numberOsSteps && (
+          <>
+            <div>
+              <h3>{questions[currentQuizStep]["question"]}</h3>
+                {questions[currentQuizStep].options.map((option) => (
+                  <div className={styles.option_wrapper} key={option.value.toString()}>
+                    <label>
+                      <input
+                        type="radio"
+                        name={`${option.display}`}
+                        value={option.value.toString()}
+                        checked={
+                            selectedAnswers.find(
+                                (answer) =>
+                                    answer.questionId === currentQuizStep && answer.answer === option.value.toString()
+                            ) !== undefined
+                        }
+                        onChange={() => handleAnswerSelect(currentQuizStep, option.value.toString(), option.isRejection)}
+                      />
+                      {option.display.includes('<img') ? (
+                      <div dangerouslySetInnerHTML={{ __html: option.display }} />
+                      ) : (
+                          option.display
+                      )}
+                    </label>
+                  </div>
+                ))}
+            </div>
+            <div className={styles.buttons_container}>
+              <Button variant="contained" onClick={handlePreviousStep}>Previous</Button>
+              <Button variant="contained" color="primary" disabled={selectedAnswers.find((answer) => answer.questionId === currentQuizStep) === undefined} onClick={handleNextStep}>Next</Button>
+            </div>
+          </>
+        )};
       </div>
     );
 };
