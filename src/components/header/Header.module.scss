@@ -1,114 +1,118 @@
 @media screen and (min-width: 1285px) {
-    .header_wrapper{
-        position: relative;
-        background-color: transparent;
-        background-size: 100%;
-        background-image: url('./../../../public/header_background.png');
-        height: auto;
-        width: 100%;
-        min-height: 630px;
-        display: flex;
-        border-image: initial;
-        border-top: none;
-        border-bottom: none;
-    }
+  .header_wrapper {
+    position: relative;
+    background-color: transparent;
+    background-size: 100%;
+    background-image: url('./../../../public/header_background.png');
+    height: auto;
+    width: 100%;
+    min-height: 630px;
+    display: flex;
+    border-image: initial;
+    border-top: none;
+    border-bottom: none;
+  }
 }
+
 @media screen and (min-width: 760px) and (max-width: 1285px) {
-    .header_wrapper{
-        position: relative;
-        background-color: transparent;
-        background-image: url('./../../../public/header_background.png');
-        height: auto;
-        width: 100%;
-        min-height: 630px;
-        display: flex;
-        border-image: initial;
-        border-top: none;
-        border-bottom: none;
-    }
+  .header_wrapper {
+    position: relative;
+    background-color: transparent;
+    background-image: url('./../../../public/header_background.png');
+    height: auto;
+    width: 100%;
+    min-height: 630px;
+    display: flex;
+    border-image: initial;
+    border-top: none;
+    border-bottom: none;
+  }
 }
 
 @media screen and (max-width: 760px) {
-    .header_wrapper{
-        position: relative;
-        background-color: #a3b79f;
-        height: auto;
-        width: 100%;
-        min-height: 630px;
-        display: flex;
-        border-image: initial;
-        border-top: none;
-        border-bottom: none;
-    }
-
-    .subtitle{
-        text-align: center;
-    }
-
-    .background_image_wrapper {
-        width: 0% !important;
-    }
-
-    .content{
-        align-items: center;
-    }
-
-    .title {
-        text-align: center !important;
-    }
-}
-
-.content_wrapper{
-    max-width: 1360px;
-    margin: 120px auto;
-    z-index: 1;
-    flex-direction: column;
-    display: flex;
-    -webkit-box-align: center;
-    align-items: center;
-    box-sizing: border-box;
-}
-
-.content{
-    margin: auto;
-    display: flex;
-    flex-direction: column;
+  .header_wrapper{
+    position: relative;
+    background-color: #a3b79f;
     height: auto;
-    margin-left: 20%;
-    margin-right: 20%;
-    gap: 20px;
+    width: 100%;
+    min-height: 630px;
+    display: flex;
+    border-image: initial;
+    border-top: none;
+    border-bottom: none;
+  }
+
+  .subtitle {
+    text-align: center;
+  }
+
+  .background_image_wrapper {
+    width: 0% !important;
+  }
+
+  .content {
+    align-items: center;
+  }
+
+  .title {
+    text-align: center !important;
+  }
 }
 
-.button{
-    width: 156px;
+.header_logo {
+    margin-left: 20%;
+}
+
+.content_wrapper {
+  max-width: 1360px;
+  margin: 120px auto;
+  z-index: 1;
+  flex-direction: column;
+  display: flex;
+  -webkit-box-align: center;
+  box-sizing: border-box;
+}
+
+.content {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  margin-left: 20%;
+  margin-right: 20%;
+  gap: 20px;
+}
+
+.button {
+  width: 156px;
 }
 
 .background_image_wrapper {
-    width: 50%;
-    display: block;
-    line-height: 0;
-    height: 100%;
-    position: initial;
+  width: 50%;
+  display: block;
+  line-height: 0;
+  height: 100%;
+  position: initial;
 }
 
 .title {
-    color: #0B3B3C;
-    font-family: TTNorms-Bold, BasisGrotesquePro-Bold, Arial, sans-serif;
-    font-weight: 400;
-    font-size: 60px;
-    line-height: 72px;
-    letter-spacing: -1px;
-    margin: 0px;
-    text-transform: none;
-    text-align: left;
-    word-break: normal;
+  color: #0B3B3C;
+  font-family: TTNorms-Bold, BasisGrotesquePro-Bold, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 60px;
+  line-height: 72px;
+  letter-spacing: -1px;
+  margin: 0px;
+  text-transform: none;
+  text-align: left;
+  word-break: normal;
 }
 
 .subtitle{
-    font-family: TTNorms-Regular, BasisGrotesquePro, Arial, sans-serif;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 32px;
-    color: #0B3B3C;
-    margin: 0px;
+  font-family: TTNorms-Regular, BasisGrotesquePro, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 32px;
+  color: #0B3B3C;
+  margin: 0px;
 }

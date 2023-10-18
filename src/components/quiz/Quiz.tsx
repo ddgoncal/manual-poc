@@ -54,18 +54,18 @@ const Quiz : React.FC<QuizProps> = ({ setTakeQuiz }) => {
      // This method answers the questions and saves the answer in the selectedAnswers array
      // It will save the answer, the questionId and if the answer is a rejection
      const handleAnswerSelect = (questionId: number, answer: string, isRejection: boolean) => {
-         setSelectedAnswers((prevAnswers) => {
-             const newAnswers = [...prevAnswers];
-             const questionIndex = newAnswers.findIndex(
-                 (answerObj) => answerObj.questionId === questionId
-             );
-             if (questionIndex === -1) {
-                 newAnswers.push({ questionId, answer, isRejection });
-             } else {
-                 newAnswers[questionIndex] = { questionId, answer, isRejection };
-            }
-             return newAnswers;
-         });
+        setSelectedAnswers((prevAnswers) => {
+          const newAnswers = [...prevAnswers];
+          const questionIndex = newAnswers.findIndex(
+            (answerObj) => answerObj.questionId === questionId
+          );
+          if (questionIndex === -1) {
+            newAnswers.push({ questionId, answer, isRejection });
+          } else {
+            newAnswers[questionIndex] = { questionId, answer, isRejection };
+        }
+          return newAnswers;
+        });
      };
 
     return (

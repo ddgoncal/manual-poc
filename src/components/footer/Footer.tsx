@@ -30,9 +30,9 @@ const Footer: React.FC = () => {
                       ))}
                     {item.title == 'Follow us' && (
                       <div className={styles.social_icon}>
-                        <TwitterIcon />
-                        <GoogleIcon />
-                        <FacebookIcon />
+                        <a href='#'><TwitterIcon className={styles.twitter_icon}/></a>
+                        <a href='#'><GoogleIcon className={styles.google_icon}/></a>
+                        <a href='https://www.facebook.com/manual.com.br/'><FacebookIcon className={styles.facebook_icon}/></a>
                       </div>
                     )}
                   </div>

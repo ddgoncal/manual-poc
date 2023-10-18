@@ -2,6 +2,7 @@ import React, { SetStateAction } from 'react';
 import styles from './Header.module.scss';
 import { func } from 'prop-types';
 import { Button } from '@mui/material';
+import Image from 'next/image';
 
 interface HeaderProps {
   setTakeQuiz: (value: SetStateAction<boolean>) => void;
@@ -14,12 +15,13 @@ const Header: React.FC<HeaderProps> = ({ setTakeQuiz }) => {
     return (
         <div className={styles.header_wrapper}>
           <div className={styles.content_wrapper}>
+            <Image src='/symbol.png' alt='logo' width={40} height={40} className={styles.header_logo} />
             <div className={styles.content}>
               <h1 className={styles.title}>
                 {title}
               </h1>
               <p className={styles.subtitle}>{subtitle}</p>
-              <Button className={styles.button} variant="contained" onClick={() => setTakeQuiz(true)} color="error"> Take the Quizz </Button>
+              <Button className={styles.button} variant="contained" onClick={() => setTakeQuiz(true)} color="son_red"> Take the Quizz </Button>
             </div>
           </div>
           <div className={styles.background_image_wrapper}></div>
