@@ -1,5 +1,5 @@
 import React, { SetStateAction } from 'react';
-import styles from './Header.module.css';
+import styles from './Header.module.scss';
 import { func } from 'prop-types';
 import { Button } from '@mui/material';
 
@@ -8,8 +8,6 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({ setTakeQuiz }) => {
-    // Define the background image URL, title, and subtitle
-    const backgroundImageUrl = 'header_background.png'; // Replace with your image URL
     const title = 'Be good to yourself';
     const subtitle = 'We are working around the clock to bring you a holistic approach to your wellness. From top to bottom, inside and out.';
 

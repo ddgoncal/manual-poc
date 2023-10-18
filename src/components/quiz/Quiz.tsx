@@ -1,5 +1,5 @@
-import { quizQuestions } from "@/constants";
-import styles from "./Quiz.module.css";
+import { failureQuizMessage, quizQuestions, sucessfullQuizMessage } from "@/constants";
+import styles from "./Quiz.module.scss";
 import React, { SetStateAction, useState } from "react";
 import { Button } from "@mui/material";
 
@@ -17,7 +17,6 @@ const Quiz : React.FC<QuizProps> = ({ setTakeQuiz }) => {
     const [selectedAnswers, setSelectedAnswers] = useState<Answer[]>([]);
     const [QuizResultsText, setQuizResultsText] = useState<string>("");
     const [currentQuizStep, setCurrentQuizStep] = useState(0);
-    //last step is the result
     const numberOsSteps = quizQuestions["questions"].length;
     const questions = quizQuestions["questions"];
 
@@ -26,13 +25,12 @@ const Quiz : React.FC<QuizProps> = ({ setTakeQuiz }) => {
     const checkResults = () => {
       let isCorrect = selectedAnswers.every((answer) => answer.isRejection === false);
       if (isCorrect) {
-          setQuizResultsText("You got all the answers right! You're a genius!")
+          setQuizResultsText(sucessfullQuizMessage);
       } else {
-          setQuizResultsText("You got some answers wrong! Try again!")
+          setQuizResultsText(failureQuizMessage);
       }
         setCurrentQuizStep((prevStep) => prevStep + 1);
-      ;
-    }
+    };
 
     // This method will be called when the user clicks on the "Next" button
     // It will increment the currentQuizStep by 1
@@ -74,8 +72,12 @@ const Quiz : React.FC<QuizProps> = ({ setTakeQuiz }) => {
       <div>
         <h1 className={styles.title}>Onboarding Quiz</h1>
         {currentQuizStep === numberOsSteps && (
-          <div className={styles.progress_bar}>
-            <p>{QuizResultsText}</p>
+          <div className={styles.quiz_result_text}>
+            {QuizResultsText.includes('<a') ? (
+              <>Great news! We have the perfect treatment for your hair loss. Process to <a href="#">www.manual.com</a> and prepare to say hello to your new hair!</>
+            ) : (
+              QuizResultsText
+            )}
           </div>
         )}
         {currentQuizStep !== numberOsSteps && (
@@ -111,7 +113,7 @@ const Quiz : React.FC<QuizProps> = ({ setTakeQuiz }) => {
               <Button variant="contained" color="primary" disabled={selectedAnswers.find((answer) => answer.questionId === currentQuizStep) === undefined} onClick={handleNextStep}>Next</Button>
             </div>
           </>
-        )};
+        )}
       </div>
     );
 };

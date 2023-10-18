@@ -1,11 +1,12 @@
 import React from 'react';
-import styles from './BackgroundNumber.module.css';
+import styles from './BackgroundNumber.module.scss';
 
 interface BackgroundNumberProps {
   number: number;
   children?: React.ReactNode;
 }
 
+// This method adds leading zeros to numbers that have only one digit
 function addLeadingZerosToNumbers(input: number) {
   return input.toString().replace(/\b\d\b/g, '0$&');
 }

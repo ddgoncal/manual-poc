@@ -20,6 +20,9 @@ export const footerLinks = [
     {   title: 'Follow us', items: [] }
 ];
 
+export const failureQuizMessage = 'Unfortunately, we are unable to prescribe this medication for you. This is because finasteride can alter PSA levels, which maybe used to monitor for cancer.'
+    + 'You should discuss this further with your GP or specialist if you would still like this medication.'
+export const sucessfullQuizMessage = 'Great news! We have the perfect treatment for your hair loss. Process to <a href="">www.manual.com</a> and prepare to say hello to your new hair!';
 // Path: src/components/Footer.tsx
 
 export const cardsInfo = [

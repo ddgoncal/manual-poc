@@ -41,7 +41,6 @@ const Footer: React.FC = () => {
             </div>
           </div>
           <div className={styles.footer_divider} />
-
           <div className={styles.footer_copyrights}>
             <p className={styles.footer_copyrights_text}>@2021 Manual. All rights reserved</p>
           </div>
