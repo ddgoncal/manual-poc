@@ -1,21 +1,21 @@
 export const footerLinks = [
     { title: 'Product', items: [
-        { label: 'Popular', href: '/product' },
-        { label: 'Trending', href: '/product/features' },
-        { label: 'Guided', href: '/product/tutorials' },
-        { label: 'Products', href: '/product/pricing' },
+        { label: 'Popular', href: '#' },
+        { label: 'Trending', href: '#' },
+        { label: 'Guided', href: '#' },
+        { label: 'Products', href: '#' },
     ]},
     { title: 'Company', items: [
-        { label: 'Press', href: '/company' },
-        { label: 'Mission', href: '/company/customers' },
-        { label: 'Strategy', href: '/company/blog' },
-        { label: 'About', href: '/company/careers' },
+        { label: 'Press', href: '#' },
+        { label: 'Mission', href: '#' },
+        { label: 'Strategy', href: '#' },
+        { label: 'About', href: '#' },
     ]},
     { title: 'Info', items: [
-        { label: 'Support', href: '/connect/contact' },
-        { label: 'Customer Service', href: '/connect/newsletter' },
-        { label: 'Get Started', href: '/connect/linkedin' },
-        { label: 'Facebook', href: '/connect/facebook' },
+        { label: 'Support', href: '#' },
+        { label: 'Customer Service', href: '#' },
+        { label: 'Get Started', href: '#' },
+        { label: 'Facebook', href: '#' },
     ]},
     {   title: 'Follow us', items: [] }
 ];
